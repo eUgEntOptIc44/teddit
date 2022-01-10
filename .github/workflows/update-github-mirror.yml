@@ -1,0 +1,28 @@
+name: "Update GitHub mirror repository"
+on:
+  schedule:
+    - cron: "0 12 * * *" # Run every day at noon.
+  workflow_dispatch:
+jobs:
+  update-mirror:
+    name: "update mirror by pulling latest commit from codeberg"
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: remove old contents
+        run: cd .. && rm -rf teddit
+      - 
+        name: clone repository from codeberg
+        run: git clone https://codeberg.org/teddit/teddit.git
+      - 
+        name: change directory
+        run: cd teddit
+      - 
+        name: list directory contents
+        run: ls -lisha
+      - 
+        name: change remote origin to GitHub remote repository
+        run: git set-url origin https://github.com/eUgEntOptIc44/teddit.git
+      -
+        name: force push contents to GitHub remote
+        run: git push origin -f
