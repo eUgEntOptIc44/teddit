@@ -188,7 +188,8 @@ module.exports = function(request, fs) {
     let instagramRegex = /([A-z.]+\.)?instagram.com/gm;
     
     str = str.replace(redditRegex, config.domain)
-    
+    str = str.replace(/(\?)utm[^&]*(?:&utm[^&]*)*&(?=(?!utm[^\s&=]*=)[^\s&=]+=)|\?utm[^&]*(?:&utm[^&]*)*$|&utm[^&]*/gi, '$1') // remove utm parameters from urls
+
     if(typeof(user_preferences) == 'undefined')
       return str
     
