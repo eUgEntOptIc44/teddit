@@ -20,7 +20,7 @@ jobs:
         run: cd teddit && ls -lisha
       - 
         name: change remote origin to GitHub remote repository
-        run: cd teddit && git remote set-url origin https://github.com/eUgEntOptIc44/teddit.git
+        run: cd teddit && git remote set-url origin https://github.com/eUgEntOptIc44/teddit.git # change url and add PAT for authentification
       -
         name: force push contents to GitHub remote
         run: cd teddit && git push origin -f
