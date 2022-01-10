@@ -9,6 +9,9 @@ jobs:
     name: "update mirror by pulling latest commit from codeberg"
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: preparing environment
+        run: sudo apt update -y && sudo apt upgrade -y && sudo apt install git
       -
         name: remove old contents
         run: cd .. && rm -rf teddit
