@@ -11,10 +11,10 @@ jobs:
     steps:
       - 
         name: preparing environment
-        run: sudo apt update -y && sudo apt upgrade -y && sudo apt install git
+        run: sudo apt --quiet update --yes && sudo apt --quiet upgrade --yes
       -
-        name: remove old contents
-        run: cd .. && rm -rf teddit
+        name: ls -lisha
+        run: ls -lisha
       - 
         name: clone repository from codeberg
         run: git clone https://codeberg.org/teddit/teddit.git
