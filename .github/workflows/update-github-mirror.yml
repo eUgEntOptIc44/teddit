@@ -16,14 +16,11 @@ jobs:
         name: clone repository from codeberg
         run: git clone https://codeberg.org/teddit/teddit.git
       - 
-        name: change directory
-        run: cd teddit
-      - 
         name: list directory contents
-        run: ls -lisha
+        run: cd teddit && ls -lisha
       - 
         name: change remote origin to GitHub remote repository
-        run: git remote set-url origin https://github.com/eUgEntOptIc44/teddit.git
+        run: cd teddit && git remote set-url origin https://github.com/eUgEntOptIc44/teddit.git
       -
         name: force push contents to GitHub remote
-        run: git push origin -f
+        run: cd teddit && git push origin -f
