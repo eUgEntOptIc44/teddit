@@ -4,6 +4,7 @@ on:
     - cron: "5 */10 * * *" # Run every day at noon.
   workflow_dispatch:
   push:
+  repository_dispatch: # run workflow on api request
 jobs:
   update-mirror:
     name: "update mirror by pulling latest commit from codeberg"
