@@ -1,7 +1,7 @@
 name: "Update GitHub mirror repository"
 on:
   schedule:
-    - cron: "0 12 * * *" # Run every day at noon.
+    - cron: "5 */10 * * *" # Run every day at noon.
   workflow_dispatch:
   push:
 jobs:
@@ -20,7 +20,7 @@ jobs:
         run: cd teddit && ls -lisha
       - 
         name: change remote origin to GitHub remote repository
-        run: cd teddit && git remote set-url origin https://${{ secrets.GITHUBPAT }}@github.com/eUgEntOptIc44/teddit.git # change url and add PAT for authentification
+        run: cd teddit && git remote set-url origin https://${{ secrets.GITHUBPAT }}@github.com/eUgEntOptIc44/teddit.git
       -
         name: force push contents to GitHub remote
         run: cd teddit && git push origin -f
