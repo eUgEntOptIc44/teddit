@@ -114,8 +114,7 @@ Note: This compose is made for a true "production" setup, and is made to be used
 ```bash
 git clone https://codeberg.org/teddit/teddit
 cd teddit
-docker-compose build
-docker-compose up
+docker-compose up --build
 ```
 
 Teddit should now be running at <http://localhost:8080>.
